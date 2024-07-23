@@ -4,19 +4,44 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+    
         <style>
+            
             div { 
                 background: navy;
                 height: 50px;
                 width: 100px;
             }
+            p { 
+                background: rgba(128, 128, 128, 0.43);
+                height: 80px;
+                width: 150px;
+            }
+        
+        </style>
+        <style>
+
         </style>
     </head>
 
     <body>
-        <div onclick = "alert('DIV have been clicked')"></div>
+        <!-- Write your comments here -->
+        <!--<div onclick = "alert('DIV have been clicked')"></div>
+        <p onclick = "document.write('p have been clicked')"></p>
+      -->
+        <div id="nazev"></div>
+
+        
+        <!--<script>
+           nazev.onclick = function() {
+            alert('div byl kliknut')
+           } 
+        </script>-->
+
         <script>
-            
+            nazev.addEventListener("click", function() {
+                alert('DIV byl kliknut')
+            });
         </script>
 
     </body>
