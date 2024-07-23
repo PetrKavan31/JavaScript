@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling Example</title>
+  <style>
+    #myDiv {
+      width: 150px;
+      height: 150px;
+      background-color: rgb(58, 6, 6);
+    }
+  </style>
+</head>
+<body>
+
+
+<div id="myDiv"></div>
+
+<script>
+  // Vybereme elementy podle jejich ID
+
+  let div = document.getElementById('myDiv');
+
+
+
+  // Připojíme event handler pro najetí myší na div
+  div.addEventListener('mouseover', function() {
+    div.style.backgroundColor = 'yellow';
+  });
+
+  // Připojíme event handler pro odjetí myší z divu
+  div.addEventListener('mouseout', function() {
+    div.style.backgroundColor = 'console.log(Math.floor(255*Math.random()))';
+  });
+</script>
+
+</body>
+</html>
