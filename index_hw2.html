@@ -1,0 +1,57 @@
+<!-- Task 1 -->
+
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Username page</title>
+<style>
+    .input-container {
+        text-align: center;
+        margin: 20px auto;
+        background-color: #f4e3d7; 
+        padding: 10px;
+        border: 2px solid rgb(111, 106, 106);
+        width: 500px; 
+        height: 200px; 
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    label {
+        display: block;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    #username {
+        padding: 10px;
+        border: 2px solid brown;
+        background-color: #f3ece6; 
+        font-size: 16px;
+        color: rgb(87, 85, 85);
+        width: 200px; 
+    }
+</style>
+</head>
+<body>
+    <div class="input-container">
+        <label for="username">Enter your name (without digits):</label>
+        <input type="text" id="username">
+    </div>
+    
+    <script>
+        const usernameInput = document.getElementById('username');
+        
+        usernameInput.addEventListener('input', function(event) {
+            let input = event.target;
+            let filteredValue = input.value.replace(/\d/g, ''); 
+            input.value = filteredValue; 
+        });
+    </script>
+</body>
+</html>
