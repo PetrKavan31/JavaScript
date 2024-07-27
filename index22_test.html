@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Username Input</title>
+<style>
+    .input-container {
+        text-align: center;
+        margin-top: 20px;
+        background-color: #f4e3d7; /* Light brown background */
+        padding: 10px;
+        border: 2px solid brown;
+        width: 500px;
+        height: 200px;
+    }
+
+    label {
+        display: block;
+        color: brown;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    #username {
+        padding: 10px;
+        border: 2px solid brown;
+        background-color: #f4e3d7; /* Light brown background */
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        width: 400px; /* Adjust width as needed */
+    }
+</style>
+</head>
+<body>
+    <div class="input-container">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username">
+    </div>
+    
+    <script>
+        const usernameInput = document.getElementById('username');
+        
+        usernameInput.addEventListener('input', function(event) {
+            let input = event.target;
+            let filteredValue = input.value.replace(/\d/g, ''); // Replace digits with an empty string
+            input.value = filteredValue; // Update the input value without digits
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Input</title>
+    <style>
+      /* Style the input field */
+#usernameInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the filtered username display */
+#filteredUsername {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+  
+    </style>
+</head>
+<body>
+    <input type="text" id="usernameInput" placeholder="Enter your username">
+    <div id="filteredUsername"></div>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const usernameInput = document.getElementById('usernameInput');
+    const filteredUsername = document.getElementById('filteredUsername');
+
+    usernameInput.addEventListener('input', function () {
+        const userInput = usernameInput.value;
+        const filteredText = userInput.replace(/\d/g, ''); // Remove digits
+
+        filteredUsername.textContent = filteredText;
+    });
+});
+ 
+    </script>
+</body>
+</html>
