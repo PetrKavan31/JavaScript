@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="cs-cz">
+    <head>
+        <meta charset="UTF-8">
+        <title>XY example</title>
+    </head>
+
+    <body>
+        X: <span id = "coordX"></span><br>
+        Y: <span id = "coordY"></span>
+        <script>
+           document.onmousemove = function(e) {
+            coordX.innerHTML = e.pageX;
+            coordY.innerHTML = e.pageY;
+           }
+           document.onmouseup = function() {
+            coordX.style.fontSize = 
+            coordY.style.fontSize = "medium";
+           }
+           document.onmousedown = function(e) {
+            if(e.which == 1) {
+            
+                coordX.style.fontSize = 
+                coordY.style.fontSize = "x-large";
+                }
+            }
+            document.oncontextmenu = function(e) {
+                e.preventDefault()
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulace s DOM</title>
+</head>
+<body>
+    <div id="container">
+        <p>Původní odstavec</p>
+    </div>
+    <button onclick="addElement()">Přidat odstavec</button>
+
+    <script>
+        function addElement() {
+            var container = document.getElementById('container');
+            var newParagraph = document.createElement('p');
+            newParagraph.textContent = 'Nový odstavec';
+            container.appendChild(newParagraph);
+        }
+    </script>
+</body>
+</html>
