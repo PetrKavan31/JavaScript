@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="cs-cz">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+
+    <body>
+        <div id="example">
+            <p> Toto je <strong> důležitý</strong> text.</p>
+        </div>
+        <button onclick="changeInnerHTML()">Změnit innerHTML</button>
+        <script>
+            function changeInnerHTML() {
+                var element = document.getElementById('example');
+                element.innerHTML = '<p>Toto je nový <em>HTML</em> obsah.</p>';
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Příklad textContent</title>
+</head>
+<body>
+    <div id="example">
+        <p>Toto je <strong>důležitý</strong> text.</p>
+    </div>
+    <button onclick="changeTextContent()">Změnit textContent</button>
+
+    <script>
+        function changeTextContent() {
+            var element = document.getElementById('example');
+            element.remove();
+        }
+    </script>
+</body>
+</html>
