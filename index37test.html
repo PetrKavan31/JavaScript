@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Link Styles</title>
   <style>
-    /* Default style for all links */
     a {
       text-decoration: none;
-      color: black;
+      color: blue;
     }
   </style>
 </head>
 <body>
- 
+  <h1>List of Links</h1>
   <ul id="linkList">
     <li><a href="index.html">index.html</a></li>
-    <li><a href="http://google.com">http://google.com</a></li>
-    <li><a href="https://itstep.org">https://itstep.org</a></li>
-    <li><a href="https://mystat.itstep.org">https://mystat.itstep.org</a></li>
-    <li><a href="/images/cat.jpg">/images/cat.jpg</a></li>
-    <li><a href="/local/path">/local/path</a></li>
+    <li><a href="http://google.com">Google</a></li>
+    <li><a href="https://itstep.org">IT STEP</a></li>
+    <li><a href="https://mystat.itstep.org">IT STEP MyStat</a></li>
+    <li><a href="/images/cat.jpg">Cat Image</a></li>
+    <li><a href="/local/path">Local Path</a></li>
   </ul>
 
   <script>
@@ -32,16 +31,16 @@
       const href = link.getAttribute('href');
 
       // Check if the link starts with http://
-      if (link.href.startsWith('http://') || link.href.startsWith('https://')) {
+      if (href.startsWith('http://')) {
         // Add dotted line style for external links
         link.style.borderBottom = '1px dotted black';
       }
-    
+
       // Add event listener to change link color on click
       link.addEventListener('click', () => {
-      link.style.color = 'blue'; // Change color to red on click
+        link.style.color = 'red'; // Change color to red on click
       });
-    } 
+    }
   </script>
 </body>
 </html>

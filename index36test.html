@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>External Links</title>
+<style>
+    a {
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: none;
+    }
+
+    .external-link {
+        border-bottom: 1px dotted black;
+        display: inline;
+    }
+</style>
+</head>
+<body>
+    <h1>List of Links</h1>
+    <ul id="links-list">
+        <li><a href="index.html">index.html</a></li>
+        <li><a href="http://google.com">http://google.com</a></li>
+        <li><a href="https://itstep.org">https://itstep.org</a></li>
+        <li><a href="https://mystat.itstep.org">https://mystat.itstep.org</a></li>
+        <li><a href="/images/cat.jpg">/images/cat.jpg</a></li>
+        <li><a href="/local/path">/local/path</a></li>
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('#links-list a');
+
+            links.forEach(link => {
+                if (link.href.startsWith('http://') || link.href.startsWith('https://')) {
+                    const text = link.innerText;
+                    const newLink = document.createElement('span');
+                    newLink.textContent = text;
+                    newLink.classList.add('external-link');
+                    link.innerHTML = '';
+                    link.appendChild(newLink);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
