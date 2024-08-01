@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Page</title>
+    <style>
+        /* Add a dotted line style for external links */
+        a.external-link {
+            border-bottom: 1px dotted #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Links</h1>
+    <ul>
+        <li><a href="index.html">index.html</a></li>
+        <li><a href="http://google.com" class="external-link">Google</a></li>
+        <li><a href="https://itstep.org" class="external-link">IT Step</a></li>
+        <li><a href="https://mystat.itstep.org" class="external-link">MyStat</a></li>
+        <li><a href="/images/cat.jpg">Cat Image</a></li>
+        <li><a href="/local/path">Local Path</a></li>
+    </ul>
+
+    <script>
+        // Add the dotted line style to external links
+        const externalLinks = document.querySelectorAll('a.external-link');
+        externalLinks.forEach(link => {
+            link.style.borderBottom = '1px dotted #000';
+        });
+    </script>
+</body>
+</html>

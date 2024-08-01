@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Styles</title>
+  <style>
+    /* Default style for all links */
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>List of Links</h1>
+  <ul id="linkList">
+    <li><a href="index.html">index.html</a></li>
+    <li><a href="http://google.com">Google</a></li>
+    <li><a href="https://itstep.org">IT STEP</a></li>
+    <li><a href="https://mystat.itstep.org">IT STEP MyStat</a></li>
+    <li><a href="/images/cat.jpg">Cat Image</a></li>
+    <li><a href="/local/path">Local Path</a></li>
+  </ul>
+
+  <script>
+    // Get the list of links element
+    const linkList = document.getElementById('linkList');
+
+    // Loop through each link in the list
+    for (const link of linkList.querySelectorAll('a')) {
+      const href = link.getAttribute('href');
+
+      // Check if the link starts with http://
+      if (href.startsWith('http://')) {
+        // Add dotted line style for external links
+        link.style.borderBottom = '1px dotted black';
+      }
+    }
+  </script>
+</body>
+</html>
