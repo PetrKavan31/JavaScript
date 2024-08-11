@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validace formuláře pomocí JavaScriptu a Regexu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Validace formuláře pomocí JavaScriptu a Regexu</h1>
+
+<form id="myForm">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <div id="emailError" class="error"></div>
+
+    <label for="phone">Telefon:</label>
+    <input type="text" id="phone" name="phone" required>
+    <div id="phoneError" class="error"></div>
+
+    <label for="password">Heslo:</label>
+    <input type="password" id="password" name="password" required>
+    <div id="passwordError" class="error"></div>
+
+    <input type="submit" value="Odeslat">
+</form>
+
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let password = document.getElementById('password').value;
+
+    // REGEX pattern
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let phonePattern = /^(\+420)?[0-9]{9}$/;
+    let passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    let emailError = document.getElementById('emailError');
+    let phoneError = document.getElementById('phoneError');
+    let passwordError = document.getElementById('passwordError');
+
+    emailError.textContent = '';
+    phoneError.textContent = '';
+    passwordError.textContent = '';
+
+
+    let valid = true;
+
+    if (!emailPattern.test(email)) {
+        emailError.textContent = 'Prosím, zadejte platnou e-mailovou adresu.';
+        valid = false;
+    }
+
+    if (!phonePattern.test(phone)) {
+        phoneError.textContent = 'Prosím, zadejte platné telefonní číslo.';
+        valid = false;
+    }
+
+    if (!passwordPattern.test(password)) {
+        passwordError.textContent = 'Heslo musí mít alespoň 8 znaků a obsahovat alespoň jedno písmeno a jednu číslici.';
+        valid = false;
+    }
+
+    if (!valid) {
+        event.preventDefault();
+    }
+});
+</script>
+
+</body>
+</html>
